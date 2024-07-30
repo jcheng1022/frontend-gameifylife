@@ -1,12 +1,8 @@
 'use client';
 
-import React, {useMemo, useState} from 'react';
+import React, {useState} from 'react';
 import {useCurrentUser, useUserTodayTasks} from "@/hooks/user.hooks";
 import CreateTaskModal from "@/components/modals/CreateTaskModal";
-import {GiTwoCoins} from "react-icons/gi";
-import {LuSwords} from 'react-icons/lu'
-import {FaRegCircleCheck} from "react-icons/fa6";
-import {FaFlagCheckered} from "react-icons/fa";
 import TaskItem from "@/components/profile/TaskItem";
 
 const TaskList = () => {
@@ -21,9 +17,9 @@ const TaskList = () => {
 
             <div className={'font-bold text-lg text-slate-400'}> Todays Tasks</div>
            <div className={'flex flex-wrap gap-2'}>
-               {tasks?.map((task) => {
+               {tasks?.map((task, index) => {
                    return (
-                       <TaskItem task={task}/>
+                       <TaskItem key={`task-item-${index}`} task={task}/>
                    )
                })}
 

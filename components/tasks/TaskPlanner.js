@@ -51,6 +51,7 @@ const TaskPlanner = ({selected, setSelected, form, handleChange}) => {
                 return (
 
                     <Collapse
+                        key={`task-planner-item-${index}`}
                         accordion
                         activeKey={selected}
                         collapsible="header"

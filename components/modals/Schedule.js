@@ -48,7 +48,7 @@ const Schedule = ({schedule, selected, setSelected, addNew}) => {
             {schedule?.map((task, index) => {
                 const taskId = generateTaskId(index)
                 return (
-                    <div id={taskId} className={`my-2 ${selected === taskId ? 'bg-blue-500' : 'bg-slate-100'} p-2 rounded`}>
+                    <div key={`schedule-item-${index}`} id={taskId} className={`my-2 ${selected === taskId ? 'bg-blue-500' : 'bg-slate-100'} p-2 rounded`}>
                         <div className={'flex gap-4 items-center'}>
                             <span className={' flex justify-center items-center bg-slate-100 text-purple-500 w-8 h-8 p-2 rounded-full'}> {index + 1} </span>
                             <div>
