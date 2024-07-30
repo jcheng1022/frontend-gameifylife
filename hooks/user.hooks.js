@@ -1,3 +1,5 @@
+'use client';
+
 import 'firebase/auth'
 import {auth} from "@/lib/firebase/firebase";
 import {useQuery} from "@tanstack/react-query";
@@ -25,6 +27,57 @@ export const useCurrentUser = ( props = {})  => {
 
 }
 
+export const useCurrentUserData = (props = {})  => {
+
+    const queryKey = ['userData', props];
+
+
+
+    return useQuery({
+        queryKey,
+        ...defaultQueryProps,
+        // enabled: !!userId,
+        retry: 5,
+        queryFn: () => APIClient.api.get(`/user/ranking`, {params: props})
+    })
+
+
+}
+
+export const useUserTasks = (userId, props = {})  => {
+
+    const queryKey = [userId, 'tasks', props];
+
+
+
+    return useQuery({
+        queryKey,
+        ...defaultQueryProps,
+        enabled: !!userId,
+        retry: 5,
+        queryFn: () => APIClient.api.get(`/task/${userId}/tasks`, {params: props})
+    })
+
+
+}
+
+
+export const useUserTodayTasks = (userId, props = {})  => {
+
+    const queryKey = [userId, 'tasks', 'today',props];
+
+
+
+    return useQuery({
+        queryKey,
+        ...defaultQueryProps,
+        enabled: !!userId,
+        retry: 5,
+        queryFn: () => APIClient.api.get(`/task/${userId}/today`, {params: props})
+    })
+
+
+}
 
 export const useUserIsLoggedIn = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false)

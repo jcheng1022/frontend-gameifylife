@@ -4,7 +4,6 @@ import {createContext, useContext, useState} from "react";
 import {auth} from "@/lib/firebase/firebase";
 import {GoogleAuthProvider, signInWithPopup} from "firebase/auth";
 import {useQueryClient} from "@tanstack/react-query";
-import {useCurrentUser} from "@/hooks/user.hooks";
 
 export const AuthContext = createContext({});
 

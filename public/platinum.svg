@@ -1,0 +1,17 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Hexagon -->
+    <polygon points="100,10 170,55 170,145 100,190 30,145 30,55" fill="#e5e4e2" stroke="black" stroke-width="5" />
+
+    <!-- Centered Diamond Shape -->
+    <polygon points="100,50 130,100 100,150 70,100" fill="#b9f2ff" stroke="#00a" stroke-width="3" />
+
+    <!-- Inner Diamond Lines -->
+    <line x1="100" y1="50" x2="100" y2="150" stroke="#00a" stroke-width="2" />
+    <line x1="70" y1="100" x2="130" y2="100" stroke="#00a" stroke-width="2" />
+
+    <!-- Decorative Stars -->
+    <polygon points="50,40 55,55 70,55 58,65 62,80 50,70 38,80 42,65 30,55 45,55" fill="#fff" />
+    <polygon points="150,40 155,55 170,55 158,65 162,80 150,70 138,80 142,65 130,55 145,55" fill="#fff" />
+    <polygon points="50,160 55,175 70,175 58,185 62,200 50,190 38,200 42,185 30,175 45,175" fill="#fff" />
+    <polygon points="150,160 155,175 170,175 158,185 162,200 150,190 138,200 142,185 130,175 145,175" fill="#fff" />
+</svg>

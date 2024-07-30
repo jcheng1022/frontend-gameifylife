@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-import {Button} from "antd";
+import {Button, Dropdown} from "antd";
 import {useAuthContext} from "@/context/AuthContext";
 import {useCurrentUser, useUserIsLoggedIn} from "@/hooks/user.hooks";
 import {useRouter} from "next/navigation";
+
 
 const NavBar = () => {
     const router = useRouter()
@@ -13,6 +14,40 @@ const NavBar = () => {
 
     const userUid = useUserIsLoggedIn()
 
+    const items = [
+        {
+            key: '1',
+            label: (
+                <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+                    1st menu item
+                </a>
+            ),
+        },
+        {
+            key: '2',
+            label: (
+                <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
+                    2nd menu item (disabled)
+                </a>
+            ),
+            // icon: <SmileOutlined />,
+            disabled: true,
+        },
+        {
+            key: '3',
+            label: (
+                <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
+                    3rd menu item (disabled)
+                </a>
+            ),
+            disabled: true,
+        },
+        {
+            key: '4',
+            danger: true,
+            label: 'a danger item',
+        },
+    ];
 
 
 
@@ -32,7 +67,14 @@ const NavBar = () => {
         if (userUid && user && !fetchingUser) {
 
             return (
-                <div className={'cursor-pointer font-bold hover:text-primaryOrange'} onClick={() => router.push(`/user/${user?.firebaseUuid}`)}  > {user?.name ? user.name : 'No name yet!'} </div>
+                <Dropdown
+                    menu={{
+                        items,
+                    }}
+                    trigger={["click"]}
+                >
+                <div className={' text-2xl cursor-pointer font-bold hover:text-orange-500'} onClick={() => router.push(`/user/${user?.firebaseUuid}`)}  > {user?.name ? user.name : 'No name yet!'} </div>
+                </Dropdown>
 
             )
         }
@@ -41,8 +83,8 @@ const NavBar = () => {
 
 
     return (
-        <div className={'px-8 py-4 flex justify-between'}>
-            <div>
+        <div className={'px-8 h-24 py-4 flex  items-center justify-between bg-slate-400 text-white'}>
+            <div className={'font-bold text-3xl cursor-pointer hover:text-orange-500'}>
                 GameifyLife
             </div>
             <div>

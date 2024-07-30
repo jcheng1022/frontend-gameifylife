@@ -1,0 +1,28 @@
+.hexagon {
+    position: absolute;
+    width: 50px;
+    height: 55px;
+
+    background-color: #737373;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.imageContainer {
+    position: relative;
+    width: 200px; /* Same width as the Image */
+    height: 200px; /* Same height as the Image */
+}
+
+.hexagonContainer {
+    position: absolute;
+    bottom: 45px;
+    /*bottom: -5px; !* Adjust this value to position the hexagon correctly *!*/
+    left: 75px;
+    /*transform: translateX(-50%);*/
+}
