@@ -5,10 +5,11 @@ import {LuSwords} from "react-icons/lu";
 import {FaRegCircleCheck} from "react-icons/fa6";
 import APIClient from "@/services/api"
 import {TASK_STATUS} from "@/constants";
-import {notification} from "antd";
+import {notification, Tooltip} from "antd";
 import {useQueryClient} from "@tanstack/react-query";
 import {useCurrentUser} from "@/hooks/user.hooks";
 import {RiProgress5Line} from "react-icons/ri";
+import {BsInfoCircle} from "react-icons/bs";
 
 const TaskItem = ({task}) => {
     const [api, contextHolder] = notification.useNotification();
@@ -26,6 +27,12 @@ const TaskItem = ({task}) => {
                 queryKey: [user?.id, 'tasks', 'today', {}]
             })
 
+            if (data.shouldUpdateUserData) {
+                await client.refetchQueries({
+                    queryKey: ['userData', {}]
+                })
+            }
+
 
 
 
@@ -40,12 +47,29 @@ const TaskItem = ({task}) => {
         })
     }
     return (
-        <div key={`task-${task.id}`} className={' grow bg-slate-50 flex flex-col border-2 p-4 rounded-2xl w-72 h-40'}>
+        <div key={`task-${task.id}`} className={' grow bg-slate-50 flex flex-col border-2 p-4 rounded-2xl w-72 h-46'}>
+            <div className={'mb-auto flex justify-center border-b-2 pb-2'}>
+                <div className={'flex items-center gap-4'}>
+                    <span>
+                        {task?.isProgress ? 'Progress' : 'Static'}
+                    </span>
+                    <span>
+                        <Tooltip title={task?.isProgress ? 'Progress tasks need to be indicated as started' : 'Static tasks can be marked as complete immediately'}>
+                            <BsInfoCircle />
+                        </Tooltip>
 
-            <div> {task.name}</div>
+
+                    </span>
+
+                </div>
+            </div>
+
+            <div className={'my-4'}>
+                <div> {task.name}</div>
 
 
 
+            </div>
             <div className={'mt-auto'}>
 
 
@@ -76,20 +100,29 @@ const TaskItem = ({task}) => {
 
                         </div>
                     ) :(
-                        <div
-                            onClick={handleCtaBtn}
-                            className={`cursor-pointer flex items-center justify-center gap-4 h-10 w-full ${!!task?.isProgress ? 'bg-yellow-500' : 'bg-green-400'} p-2 rounded-lg text-center text-white font-extrabold mt-auto`}>
-                            {!!task?.isProgress ? (
-                                <>
-                                    <LuSwords size={20}/>
-                                    Challenge
-                                </>
-                            ) : (
-                                <>
-                                    <FaRegCircleCheck size={20}/>
-                                    Complete
-                                </>
-                            )}
+                        <div className={'flex gap-2'}>
+                            <div
+                                onClick={handleCtaBtn}
+                                className={`cursor-pointer flex items-center justify-center gap-4 h-10 w-full ${!!task?.isProgress ? 'bg-yellow-500' : 'bg-green-400'} p-2 rounded-lg text-center text-white font-extrabold mt-auto`}>
+                                {!!task?.isProgress ? (
+                                    <>
+                                        <LuSwords size={20}/>
+                                        Start
+                                    </>
+
+
+                                ) : (
+                                    <>
+                                        <FaRegCircleCheck size={20}/>
+                                        Complete
+                                    </>
+                                )}
+                            </div>
+                            {/*<div*/}
+                            {/*    onClick={handleCtaBtn}*/}
+                            {/*    className={`cursor-pointer flex items-center justify-center gap-4 h-10 w-full ${!!task?.isProgress ? 'bg-yellow-500' : 'bg-green-400'} p-2 rounded-lg text-center text-white font-extrabold mt-auto`}>*/}
+                            {/*   Edit*/}
+                            {/*</div>*/}
                         </div>
                     )}
 
