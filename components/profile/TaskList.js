@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 import {useCurrentUser, useUserTodayTasks} from "@/hooks/user.hooks";
 import CreateTaskModal from "@/components/modals/CreateTaskModal";
 import TaskItem from "@/components/profile/TaskItem";
+import {Button} from "antd";
 
 const TaskList = () => {
     const {data: user} = useCurrentUser();
@@ -15,7 +16,14 @@ const TaskList = () => {
     return (
         <div className={'bg-slate-100 w-full p-4 flex flex-col gap-4 rounded-2xl'}>
 
-            <div className={'font-bold text-lg text-slate-400'}> Todays Tasks</div>
+           <div className={'flex justify-between'}>
+               <div className={'font-bold text-lg text-slate-400'}> Todays Tasks</div>
+               <div className={'cursor-pointer rounded-lg bg-sky-200 border-0 text-md text-slate-500 font-bold py-2 px-8 hover:text-white'}
+                    onClick={() => setOpenCreateTasks(true)}
+               >
+                   New
+               </div>
+           </div>
            <div className={'flex flex-wrap gap-2'}>
                {tasks?.map((task, index) => {
                    return (

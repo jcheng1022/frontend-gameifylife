@@ -42,8 +42,9 @@ const CreateTaskModal = ({ open, onCancel }) => {
         console.log(form)
 
         const body = {...form}
+        const isToday = body?.isToday
 
-        if (body?.isToday) {
+        if (isToday) {
             delete body.date
         }
         delete body.isToday
@@ -52,6 +53,11 @@ const CreateTaskModal = ({ open, onCancel }) => {
             client.refetchQueries({
                 queryKey: [user?.id, 'tasks', {}]
             })
+            if (isToday) {
+                client.refetchQueries({
+                    queryKey: [user?.id, 'tasks', 'today', {}]
+                })
+            }
             onCancel()
         }).catch((error) => {
             openNotificationWithIcon(error)
