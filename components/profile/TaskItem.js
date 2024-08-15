@@ -66,6 +66,9 @@ const TaskItem = ({task}) => {
 
             <div className={'my-4'}>
                 <div> {task.name}</div>
+                {task?.description && (
+                    <div className={'text-sm text-slate-400'}> {task.description}</div>
+                )}
 
 
 

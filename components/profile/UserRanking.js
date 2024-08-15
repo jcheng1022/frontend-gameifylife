@@ -22,9 +22,6 @@ const UserRanking = () => {
         setOpenInfo(false)
     }
 
-
-    const rankingIcon = getRankingIcon(userData?.level)
-    console.log(rankingIcon, 'ionc')
     return (
         <div className={'border rounded-2xl w-96 max-h-96 flex flex-col items-center justify-center p-12'}>
 

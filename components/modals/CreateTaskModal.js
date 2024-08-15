@@ -28,7 +28,7 @@ const CreateTaskModal = ({ open, onCancel }) => {
 
     const handleChange = (name) => (e) => {
 
-        const val = typeof e === 'object' ? e.target.value : e
+        const val = typeof e === 'object' ? e?.target?.value : e
 
         setForm((prev) => {
             return {

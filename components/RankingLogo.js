@@ -13,8 +13,7 @@ import styles from './RankingLogo.module.css'; // Import the CSS module
 
 const RankingLogo = ({level}) => {
 
-    const rankingIcon = getRankingIcon(level)
-    console.log(rankingIcon, 'ionc')
+
     let svgPath;
 
     switch(level){
