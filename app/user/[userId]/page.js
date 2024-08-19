@@ -3,6 +3,9 @@ import UserRanking from "@/components/profile/UserRanking";
 import TaskList from "@/components/profile/TaskList";
 import CreateTaskModal from "@/components/modals/CreateTaskModal";
 import Achievements from "@/components/profile/Achievements";
+import {ProfileContextProvider} from "@/context/ProfileContext";
+import ProfileTabNav from "@/components/profile/ProfileTabNav";
+import ProfileContent from "@/components/profile/ProfileContent";
 
 const UserPage = () => {
 
@@ -13,8 +16,13 @@ const UserPage = () => {
                    <UserRanking />
                    <Achievements />
                </div>
+                <ProfileContextProvider>
+                    <div className={'w-full'}>
+                        <ProfileTabNav/>
+                        <ProfileContent/>
+                    </div>
 
-               <TaskList/>
+                </ProfileContextProvider>
            </div>
            <CreateTaskModal open={false} />
        </div>
