@@ -10,11 +10,10 @@ import RankInfoModal from "@/components/modals/RankInfoModal";
 const UserRanking = () => {
 
     // const {data: user} = useCurrentUser()
-    const {data: userData, isFetching, isLoading} = useCurrentUserData()
+    const {data: userData, isFetching, isLoading, isRefetching} = useCurrentUserData()
     const [openInfo, setOpenInfo] = useState(false)
 
-    console.log(openInfo, 'is it open')
-    if (isFetching || isLoading) {
+    if (!isRefetching && (isFetching || isLoading)) {
         return <div> ...Loading</div>
     }
 

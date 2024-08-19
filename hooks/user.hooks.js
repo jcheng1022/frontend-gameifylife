@@ -36,6 +36,7 @@ export const useCurrentUserData = (props = {})  => {
     return useQuery({
         queryKey,
         ...defaultQueryProps,
+
         // enabled: !!userId,
         retry: 5,
         queryFn: () => APIClient.api.get(`/user/ranking`, {params: props})
