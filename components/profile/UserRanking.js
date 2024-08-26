@@ -2,7 +2,6 @@
 
 import React, {useState} from 'react';
 import {useCurrentUserData} from "@/hooks/user.hooks";
-import {getRankingIcon} from "@/utils";
 import RankingLogo from "@/components/RankingLogo";
 import XPBar from "@/components/profile/XPBar";
 import RankInfoModal from "@/components/modals/RankInfoModal";

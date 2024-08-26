@@ -1,5 +1,4 @@
 import React from 'react';
-import {getRankingIcon} from "@/utils";
 import Image from "next/image";
 import BronzeLogo from '../public/bronze.svg'
 import SilverLogo from '../public/silver.svg'
