@@ -113,6 +113,18 @@ const CreateTaskModal = ({ open, onCancel }) => {
                     <div className={'text-sm text-slate-400'}> Provide any additional details about the task, optional of course. </div>
                     <TextArea onChange={handleChange('description')} placeholder={'Spend 60 minutes at the gym and do cardio at the end of the workout'} />
                 </div>
+
+                <div>
+                    <span className={' font-semibold'}> Task Type</span>
+                    <div className={'text-sm text-slate-400'}> Identify this task as  static (instant completion) or progression (completed over time)  </div>
+                    <Radio.Group className={'my-2'} onChange={handleChange('type')} defaultValue={'STATIC'} value={form?.type}>
+                        <Radio value={'STATIC'}>Static</Radio>
+                        <Radio value={'PROGRESS'}>Progression</Radio>
+
+                    </Radio.Group>
+
+                </div>
+
             </div>
 
             <div className={'border rounded-2xl p-8 my-2'}>

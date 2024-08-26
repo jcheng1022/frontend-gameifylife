@@ -132,7 +132,7 @@ const TaskPlanner = ({selected, setSelected, form, handleChange}) => {
                                         </div>
 
                                         <div className={' py-2'}>
-                                            <span className={' font-semibold'}> Estimated Time Needed</span>
+                                            <span className={' font-semibold'}> Estimated Time Needed ( in minutes )</span>
                                             <div className={'text-sm text-slate-400'}> Tasks with higher estimated tasks will provide more points upon completion </div>
                                             <InputNumber className={'my-2'} onChange={handleChange('timeNeeded', index)} placeholder={'10'} />
                                         </div>
