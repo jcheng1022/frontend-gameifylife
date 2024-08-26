@@ -41,7 +41,6 @@ const TaskPlanner = ({selected, setSelected, form, handleChange}) => {
     //
 
     const handleTaskClick = (e) => {
-        console.log(e.currentTarget.id)
         setSelected(e.currentTarget.id)
     }
     return (

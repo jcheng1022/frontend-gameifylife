@@ -43,7 +43,6 @@ class APIClient {
 
             return config
         }, (error) => {
-            console.log('errorDDDD', error)
             return Promise.reject(error)
         })
 

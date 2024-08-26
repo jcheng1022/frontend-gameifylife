@@ -3,7 +3,6 @@ import PlanningPhase from "@/components/scenes/PlanningPhase";
 
 const Page = ({params, searchParams}) => {
 
-    console.log(params, searchParams,2)
     if (searchParams?.phase === 'planning') {
         return <PlanningPhase/>
     }

@@ -20,7 +20,6 @@ const rankLogos = {
 };
 
 const RankInfoModal = ({ open, onCancel }) => {
-    console.log(`isopen`, open)
     return (
         <Modal width={850} open={open} onCancel={onCancel} footer={[<Button onClick={onCancel} className={'w-full h-12 bg-sky-300 text-white font-bold'} key="got-it">Got it!</Button>]}>
             <div className={'text-2xl pb-4 font-semibold'}>Ranking System</div>

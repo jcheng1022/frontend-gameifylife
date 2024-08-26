@@ -9,16 +9,17 @@ import {useCurrentUser} from "@/hooks/user.hooks";
 const Modal = dynamic(() => import('antd/lib/modal'), { ssr: false });
 
 const {TextArea} = Input
+const initForm = {
+    isToday: true,
+    priority: 'MEDIUM',
+    hasReward: true,
+    type: 'STATIC'
+}
 const CreateTaskModal = ({ open, onCancel }) => {
     const [api, contextHolder] = notification.useNotification();
     const client = useQueryClient();
     const {data: user} = useCurrentUser()
-    const [form, setForm] = useState({
-        isToday: true,
-        priority: 'MEDIUM',
-        hasReward: true,
-        type: 'STATIC'
-    });
+    const [form, setForm] = useState(initForm);
 
     const openNotificationWithIcon = (error) => {
         api['error']({
@@ -40,7 +41,6 @@ const CreateTaskModal = ({ open, onCancel }) => {
     }
 
     const handleSubmit = async () => {
-        console.log(form)
 
         const body = {...form}
         const isToday = body?.isToday
@@ -59,11 +59,11 @@ const CreateTaskModal = ({ open, onCancel }) => {
                     queryKey: [user?.id, 'tasks', 'today', {}]
                 })
             }
+            setForm(initForm)
             onCancel()
         }).catch((error) => {
             openNotificationWithIcon(error)
         })
-        console.log(body, 22)
     }
     return (
         <Modal width={'100%'} footer={[

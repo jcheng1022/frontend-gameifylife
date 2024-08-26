@@ -4,7 +4,6 @@ export const getRankingIcon = (level) => {
     let svgPath;
 
     const numLevel = typeof level === 'number' ? level : parseInt(level)
-    console.log(numLevel, 'level')
     switch(numLevel){
         case RANKING.BRONZE:
             svgPath = 'bronze.svg'
