@@ -16,7 +16,8 @@ const CreateTaskModal = ({ open, onCancel }) => {
     const [form, setForm] = useState({
         isToday: true,
         priority: 'MEDIUM',
-        hasReward: true
+        hasReward: true,
+        type: 'STATIC'
     });
 
     const openNotificationWithIcon = (error) => {
