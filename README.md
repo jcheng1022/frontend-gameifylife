@@ -88,7 +88,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 * [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
-* [Express][Express.js]
+* [![Express][Express.js]][Vue-url]
 * [![Angular][Angular.io]][Angular-url]
 * [![Svelte][Svelte.dev]][Svelte-url]
 * [![Laravel][Laravel.com]][Laravel-url]
