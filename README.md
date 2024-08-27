@@ -288,22 +288,26 @@ Gameify Life is an application built to help users be more productive, by incent
 ## Contact
 
 Feel free to contact me at my LinkedIn([@jackychengjc](https://www.linkedin.com/in/jackychengjc/)) or email me at [jackycheng1022@gmail.com](mailto:jackycheng1022@gmail.com)
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
+Project Link: [gameifylife.vercel.app](https://gameifylife.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+[//]: # ()
+[//]: # (<!-- ACKNOWLEDGMENTS -->)
+
+[//]: # (## Acknowledgments)
+
+[//]: # ()
+[//]: # (* []&#40;&#41;)
+
+[//]: # (* []&#40;&#41;)
+
+[//]: # (* []&#40;&#41;)
+
+[//]: # ()
+[//]: # (<p align="right">&#40;<a href="#readme-top">back to top</a>&#41;</p>)
 
 
 
