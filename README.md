@@ -30,47 +30,77 @@
 <h3 align="center">Gameify Life</h3>
 
   <p align="center">
-    project_description
+    A full-stack application designed to enhance productivity by providing rewards for task completion
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://gameifylife.vercel.app/"><strong>Visit application »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+
+[//]: # (    <a href="https://github.com/github_username/repo_name">View Demo</a>)
+
+[//]: # (    ·)
+
+[//]: # (    <a href="https://github.com/github_username/repo_name/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>)
+
+[//]: # (    ·)
+
+[//]: # (    <a href="https://github.com/github_username/repo_name/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>)
   </p>
 </div>
 
+[//]: # ()
+[//]: # ()
+[//]: # (<!-- TABLE OF CONTENTS -->)
 
+[//]: # (<details>)
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
+[//]: # (  <summary>Table of Contents</summary>)
 
+[//]: # (  <ol>)
+
+[//]: # (    <li>)
+
+[//]: # (      <a href="#about-the-project">About The Project</a>)
+
+[//]: # (      <ul>)
+
+[//]: # (        <li><a href="#built-with">Built With</a></li>)
+
+[//]: # (      </ul>)
+
+[//]: # (    </li>)
+
+[//]: # (    <li>)
+
+[//]: # (      <a href="#getting-started">Getting Started</a>)
+
+[//]: # (      <ul>)
+
+[//]: # (        <li><a href="#prerequisites">Prerequisites</a></li>)
+
+[//]: # (        <li><a href="#installation">Installation</a></li>)
+
+[//]: # (      </ul>)
+
+[//]: # (    </li>)
+
+[//]: # (    <li><a href="#usage">Usage</a></li>)
+
+[//]: # (    <li><a href="#roadmap">Roadmap</a></li>)
+
+[//]: # (    <li><a href="#contributing">Contributing</a></li>)
+
+[//]: # (    <li><a href="#license">License</a></li>)
+
+[//]: # (    <li><a href="#contact">Contact</a></li>)
+
+[//]: # (    <li><a href="#acknowledgments">Acknowledgments</a></li>)
+
+[//]: # (  </ol>)
+
+[//]: # (</details>)
+
+[//]: # ()
 
 
 <!-- ABOUT THE PROJECT -->
@@ -78,8 +108,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
-
+Gameify Life is an application built to help users be more productive, by incentivizing everyday tasks with points. Users can assign rewards for themselves, to be claimed upon obtaining enough points.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -95,107 +124,170 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+[//]: # ()
+[//]: # (<!-- GETTING STARTED -->)
 
-<!-- GETTING STARTED -->
-## Getting Started
+[//]: # (## Getting Started)
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+[//]: # ()
+[//]: # (This is an example of how you may give instructions on setting up your project locally.)
 
-### Prerequisites
+[//]: # (To get a local copy up and running follow these simple example steps.)
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+[//]: # ()
+[//]: # (### Prerequisites)
 
-### Installation
+[//]: # ()
+[//]: # (This is an example of how to list things you need to use the software and how to install them.)
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-5. Change git remote url to avoid accidental pushes to base project
-   ```sh
-   git remote set-url origin github_username/repo_name
-   git remote -v # confirm the changes
-   ```
+[//]: # (* npm)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+[//]: # (  ```sh)
 
+[//]: # (  npm install npm@latest -g)
 
+[//]: # (  ```)
 
-<!-- USAGE EXAMPLES -->
-## Usage
+[//]: # ()
+[//]: # (### Installation)
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+[//]: # ()
+[//]: # (1. Get a free API Key at [https://example.com]&#40;https://example.com&#41;)
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+[//]: # (2. Clone the repo)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+[//]: # (   ```sh)
 
+[//]: # (   git clone https://github.com/github_username/repo_name.git)
 
+[//]: # (   ```)
 
-<!-- ROADMAP -->
-## Roadmap
+[//]: # (3. Install NPM packages)
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+[//]: # (   ```sh)
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+[//]: # (   npm install)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+[//]: # (   ```)
 
+[//]: # (4. Enter your API in `config.js`)
 
+[//]: # (   ```js)
 
-<!-- CONTRIBUTING -->
-## Contributing
+[//]: # (   const API_KEY = 'ENTER YOUR API';)
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+[//]: # (   ```)
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+[//]: # (5. Change git remote url to avoid accidental pushes to base project)
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+[//]: # (   ```sh)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+[//]: # (   git remote set-url origin github_username/repo_name)
 
-### Top contributors:
+[//]: # (   git remote -v # confirm the changes)
 
-<a href="https://github.com/github_username/repo_name/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=github_username/repo_name" alt="contrib.rocks image" />
-</a>
+[//]: # (   ```)
 
+[//]: # ()
+[//]: # (<p align="right">&#40;<a href="#readme-top">back to top</a>&#41;</p>)
 
+[//]: # ()
+[//]: # ()
+[//]: # ()
+[//]: # (<!-- USAGE EXAMPLES -->)
 
-<!-- LICENSE -->
-## License
+[//]: # (## Usage)
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+[//]: # ()
+[//]: # (Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+[//]: # ()
+[//]: # (_For more examples, please refer to the [Documentation]&#40;https://example.com&#41;_)
 
+[//]: # ()
+[//]: # (<p align="right">&#40;<a href="#readme-top">back to top</a>&#41;</p>)
 
+[//]: # ()
+[//]: # ()
+[//]: # ()
+[//]: # (<!-- ROADMAP -->)
+
+[//]: # (## Roadmap)
+
+[//]: # ()
+[//]: # (- [ ] Feature 1)
+
+[//]: # (- [ ] Feature 2)
+
+[//]: # (- [ ] Feature 3)
+
+[//]: # (    - [ ] Nested Feature)
+
+[//]: # ()
+[//]: # (See the [open issues]&#40;https://github.com/github_username/repo_name/issues&#41; for a full list of proposed features &#40;and known issues&#41;.)
+
+[//]: # ()
+[//]: # (<p align="right">&#40;<a href="#readme-top">back to top</a>&#41;</p>)
+
+[//]: # ()
+[//]: # ()
+[//]: # ()
+[//]: # (<!-- CONTRIBUTING -->)
+
+[//]: # (## Contributing)
+
+[//]: # ()
+[//]: # (Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.)
+
+[//]: # ()
+[//]: # (If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".)
+
+[//]: # (Don't forget to give the project a star! Thanks again!)
+
+[//]: # ()
+[//]: # (1. Fork the Project)
+
+[//]: # (2. Create your Feature Branch &#40;`git checkout -b feature/AmazingFeature`&#41;)
+
+[//]: # (3. Commit your Changes &#40;`git commit -m 'Add some AmazingFeature'`&#41;)
+
+[//]: # (4. Push to the Branch &#40;`git push origin feature/AmazingFeature`&#41;)
+
+[//]: # (5. Open a Pull Request)
+
+[//]: # ()
+[//]: # (<p align="right">&#40;<a href="#readme-top">back to top</a>&#41;</p>)
+
+[//]: # ()
+[//]: # (### Top contributors:)
+
+[//]: # ()
+[//]: # (<a href="https://github.com/github_username/repo_name/graphs/contributors">)
+
+[//]: # (  <img src="https://contrib.rocks/image?repo=github_username/repo_name" alt="contrib.rocks image" />)
+
+[//]: # (</a>)
+
+[//]: # ()
+[//]: # ()
+[//]: # ()
+[//]: # (<!-- LICENSE -->)
+
+[//]: # (## License)
+
+[//]: # ()
+[//]: # (Distributed under the MIT License. See `LICENSE.txt` for more information.)
+
+[//]: # ()
+[//]: # (<p align="right">&#40;<a href="#readme-top">back to top</a>&#41;</p>)
+
+[//]: # ()
+[//]: # ()
 
 <!-- CONTACT -->
 ## Contact
 
+Feel free to contact me at my LinkedIn([@jackychengjc](https://www.linkedin.com/in/jackychengjc/)) or email me at [jackycheng1022@gmail.com](mailto:jackycheng1022@gmail.com)
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
 
 Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
