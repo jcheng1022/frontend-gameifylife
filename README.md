@@ -109,6 +109,21 @@
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 Gameify Life is an application built to help users be more productive, by incentivizing everyday tasks with points. Users can assign rewards for themselves, to be claimed upon obtaining enough points.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- FEATURES -->
+## Features
+
+
+<ul>
+    <li> Create a task schedule for the day, with the ability to mark as complete or in progress</li>
+    <li> Earn dynamic point rewards upon completion</li>
+    <li> Create and claim personalized rewards upon achieving set milestones</li>
+    <li> Compete with other users to climb up the ranking system</li>
+</ul>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
