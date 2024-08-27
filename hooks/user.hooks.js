@@ -62,6 +62,19 @@ export const useUserTasks = (userId, props = {})  => {
 
 }
 
+export const useUserTaskHistory = (userId) => {
+    const queryKey = [userId, 'tasks', 'history']
+
+
+    return useQuery({
+        queryKey,
+        ...defaultQueryProps,
+        enabled: !!userId,
+        retry: 5,
+        queryFn: () => APIClient.api.get(`/user/${userId}/history`, {})
+    })
+
+}
 
 export const useUserTodayTasks = (userId, props = {})  => {
 
