@@ -91,11 +91,6 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 * [![Express][Express.js]][Vue-url]
 * [![Firebase][Firebase]][Vue-url]
 * [![Supabase][Supabase]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
