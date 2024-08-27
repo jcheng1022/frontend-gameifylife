@@ -89,6 +89,8 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 * [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
 * [![Express][Express.js]][Vue-url]
+* [![Firebase][Firebase]][Vue-url]
+* [![Supabase][Supabase]][Vue-url]
 * [![Angular][Angular.io]][Angular-url]
 * [![Svelte][Svelte.dev]][Svelte-url]
 * [![Laravel][Laravel.com]][Laravel-url]
@@ -250,3 +252,5 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
+[Firebase]: https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black
+[Supabase]: https://shields.io/badge/supabase-black?logo=supabase&style=for-the-badge
