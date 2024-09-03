@@ -1,78 +1,16 @@
-'use client';
-import React, {useState} from 'react';
-import dynamic from 'next/dynamic';
-import {Button, DatePicker, Input, InputNumber, notification, Radio, Switch} from "antd";
-import APIClient from '@/services/api'
-import {useQueryClient} from "@tanstack/react-query";
-import {useCurrentUser} from "@/hooks/user.hooks";
+import React from 'react';
+import {DatePicker, Input, InputNumber, Radio, Switch} from "antd";
+const {TextArea } = Input
 
-const Modal = dynamic(() => import('antd/lib/modal'), { ssr: false });
-
-const {TextArea} = Input
-const initForm = {
+const initTask = {
     isToday: true,
+    description: '',
     priority: 'MEDIUM',
-    hasReward: true,
-    type: 'STATIC'
+    type: 'STATIC',
 }
-const CreateTaskModal = ({ open, onCancel }) => {
-    const [api, contextHolder] = notification.useNotification();
-    const client = useQueryClient();
-    const {data: user} = useCurrentUser()
-    const [form, setForm] = useState([initForm]);
-
-    const openNotificationWithIcon = (error) => {
-        api['error']({
-            message: 'Could not create task',
-            description: error.message
-        });
-    };
-
-    const handleChange = (name) => (e) => {
-
-        const val = typeof e === 'object' ? e?.target?.value : e
-
-        setForm((prev) => {
-            return {
-                ...prev,
-                [name]: val
-            }
-        })
-    }
-
-    const handleSubmit = async () => {
-
-        const body = {...form}
-        const isToday = body?.isToday
-
-        if (isToday) {
-            delete body.date
-        }
-        delete body.isToday
-
-        await APIClient.api.post('/task', body).then(() => {
-            client.refetchQueries({
-                queryKey: [user?.id, 'tasks', {}]
-            })
-            if (isToday) {
-                client.refetchQueries({
-                    queryKey: [user?.id, 'tasks', 'today', {}]
-                })
-            }
-            setForm(initForm)
-            onCancel()
-        }).catch((error) => {
-            openNotificationWithIcon(error)
-        })
-    }
+const CreateTaskItem = ({ index, taskItem, handleChange, onSubmit }) => {
     return (
-        <Modal width={'100%'} footer={[
-            <Button key={'cancel-create-task-btn'}  className={'h-12 text-xl font-semibold'} onClick={onCancel}> Cancel </Button>,
-            <Button key={`create-task-btn`}  className={'bg-sky-300 text-white font-bold text-xl w-28 h-12'} onClick={handleSubmit}> Create </Button>]}
-               closeIcon={null} open={open} onCancel={onCancel}>
-            {contextHolder}
-
-
+        <div>
             <div className={'border rounded-2xl p-8 my-2'}>
                 <div className={'text-xl font-bold'}> Basic Information </div>
                 <div className={'text-slate-400'}> Get started by explaining the task</div>
@@ -82,23 +20,19 @@ const CreateTaskModal = ({ open, onCancel }) => {
 
                     <span>
                     <Switch
-                        checked={form?.isToday}
-                        onChange={handleChange('isToday')}
+                        checked={taskItem?.isToday}
+                        onChange={handleChange('isToday', index)}
                     />
                         {/*<span> {!!form?.isToday ? 'Yes' : 'No'}</span>*/}
                 </span>
                 </div>
 
-                {!form?.isToday && (
+                {!taskItem?.isToday?.isToday && (
                     <div className={'flex gap-4 py-2'}>
                         <span> Date</span>
                         <DatePicker onChange={(date, dateString) =>
-                            setForm(prev => {
-                                return {
-                                    ...form,
-                                    date: dateString
-                                }
-                            })
+                            handleChange('date', index)
+
                         }/>
                     </div>
                 )}
@@ -106,19 +40,19 @@ const CreateTaskModal = ({ open, onCancel }) => {
                 <div className={' py-2'}>
                     <span className={' font-semibold'}> Name</span>
                     <div className={'text-sm text-slate-400'}> The name of task should be short but descriptive enough to identify at first glance</div>
-                    <Input placeholder={'Go to the gym'} onChange={handleChange('name')} />
+                    <Input placeholder={'Go to the gym'} onChange={handleChange('name', index)} />
                 </div>
 
                 <div className={'py-2'}>
                     <span className={' font-semibold'}> Description of Task</span>
                     <div className={'text-sm text-slate-400'}> Provide any additional details about the task, optional of course. </div>
-                    <TextArea onChange={handleChange('description')} placeholder={'Spend 60 minutes at the gym and do cardio at the end of the workout'} />
+                    <TextArea onChange={handleChange('description', index)} placeholder={'Spend 60 minutes at the gym and do cardio at the end of the workout'} />
                 </div>
 
                 <div>
                     <span className={' font-semibold'}> Task Type</span>
                     <div className={'text-sm text-slate-400'}> Identify this task as  static (instant completion) or progression (completed over time)  </div>
-                    <Radio.Group className={'my-2'} onChange={handleChange('type')} defaultValue={'STATIC'} value={form?.type}>
+                    <Radio.Group className={'my-2'} onChange={handleChange('type', index)} defaultValue={'STATIC'} value={taskItem?.type}>
                         <Radio value={'STATIC'}>Static</Radio>
                         <Radio value={'PROGRESS'}>Progression</Radio>
 
@@ -144,7 +78,7 @@ const CreateTaskModal = ({ open, onCancel }) => {
                 <div className={' py-2'}>
                     <span className={' font-semibold'}> Priority</span>
                     <div className={'text-sm text-slate-400'}> The priority of the task will help determine the points awarded upon completion </div>
-                    <Radio.Group className={'my-2'} onChange={handleChange('priority')} defaultValue={3} value={form?.priority}>
+                    <Radio.Group className={'my-2'} onChange={handleChange('priority', index)} defaultValue={3} value={taskItem?.priority}>
                         <Radio value={'EXTREMELY_LOW'}>Extremely Low</Radio>
                         <Radio value={'LOW'}>Low</Radio>
                         <Radio value={'MEDIUM'}>Medium</Radio>
@@ -157,7 +91,7 @@ const CreateTaskModal = ({ open, onCancel }) => {
                 <div className={' py-2'}>
                     <span className={' font-semibold'}> Estimated Time Needed</span>
                     <div className={'text-sm text-slate-400'}> Tasks with higher estimated tasks will provide more points upon completion </div>
-                    <InputNumber className={'my-2'} onChange={handleChange('timeNeeded')} placeholder={'10'} />
+                    <InputNumber className={'my-2'} onChange={handleChange('timeNeeded', index)} placeholder={'10'} />
                 </div>
 
 
@@ -165,9 +99,8 @@ const CreateTaskModal = ({ open, onCancel }) => {
 
             </div>
 
-
-        </Modal>
+        </div>
     );
 };
 
-export default CreateTaskModal;
+export default CreateTaskItem;

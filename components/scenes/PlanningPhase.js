@@ -18,26 +18,39 @@ const PlanningPhase = () => {
         }
     ]);
 
-    const handleChange = (name, index) => (e) => {
+    const handleChange = (name, index) => (e, dateString) => {
         const val = typeof e === 'object' ? e.target.value : e;
 
-        setForm((prev) => {
-            // Copy the previous state array to avoid mutating it directly
-            const newState = [...prev];
+        if (name === 'date') {
+            setForm(prev => {
+                return {
+                    ...form,
+                    date: dateString
+                }
+            })
+        } else {
+            setForm((prev) => {
+                // Copy the previous state array to avoid mutating it directly
+                const newState = [...prev];
 
-            // Ensure that the array contains an object at the specified index
-            if (!newState[index]) {
-                newState[index] = {};
-            }
+                // Ensure that the array contains an object at the specified index
+                console.log(newState[index], index, 'index here', newState)
+                if (!newState[index]) {
 
-            // Update the specified field in the object at the specified index
-            newState[index] = {
-                ...newState[index],
-                [name]: val
-            };
+                    newState[index] = {};
+                }
 
-            return newState;
-        });
+                // Update the specified field in the object at the specified index
+                newState[index] = {
+                    ...newState[index],
+                    [name]: val
+                };
+                console.log(newState, 'new')
+
+                return newState;
+            });
+        }
+
     };
 
     const addNewTask = () => {
@@ -52,6 +65,8 @@ const PlanningPhase = () => {
 
             return newState
         })
+
+        setSelectedTask(generateTaskId(form.length ))
     }
 
 
@@ -72,9 +87,13 @@ const PlanningPhase = () => {
             <hr className={'my-8 mx-12'}/>
             <div className={'p-4 flex flex-col sm:flex-row gap-4 sm:gap-2'}>
 
-                <Schedule addNew={addNewTask} schedule={form} selected={selectedTask}/>
+                <Schedule addNew={addNewTask} schedule={form} selected={selectedTask} setSelected={setSelectedTask}/>
                 <TaskPlanner form={form} handleChange={handleChange} selected={selectedTask} setSelected={setSelectedTask}/>
 
+            </div>
+
+            <div className={'cursor-pointer font-bold flex justify-center bg-sky-300 hover:bg-sky-200 hover:text-white  mx-24 my-12 py-8 rounded-2xl text-2xl'}>
+                {`I'm done, submit`}
             </div>
         </div>
     );

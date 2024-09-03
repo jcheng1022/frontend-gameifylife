@@ -21,7 +21,7 @@ const Hero = () => {
         }
     }
     return (
-        <div className={'bg-gradient-to-tr from-blue-100 to-sky-200 p-4 flex items-center justify-around'}>
+        <div className={' p-4 flex items-center justify-around'}>
             <div className={'py-24'}>
 <div className={'text-5xl font-bold text-slate-900'}>Turn your day into a game</div>
                 <p className={'text-lg text-blue-700'}>Manage your tasks and earn rewards</p>
