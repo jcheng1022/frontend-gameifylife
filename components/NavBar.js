@@ -18,34 +18,17 @@ const NavBar = () => {
         {
             key: '1',
             label: (
-                <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
-                    1st menu item
-                </a>
+               <div onClick={() => router.push(`/user/${user?.firebaseUuid}`)}>
+                   My Profile
+               </div>
             ),
         },
-        {
-            key: '2',
-            label: (
-                <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
-                    2nd menu item (disabled)
-                </a>
-            ),
-            // icon: <SmileOutlined />,
-            disabled: true,
-        },
-        {
-            key: '3',
-            label: (
-                <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
-                    3rd menu item (disabled)
-                </a>
-            ),
-            disabled: true,
-        },
+
         {
             key: '4',
             danger: true,
-            label: 'a danger item',
+            label: 'Log Out',
+            onClick: () => logOut()
         },
     ];
 
@@ -73,7 +56,10 @@ const NavBar = () => {
                     }}
                     trigger={["click"]}
                 >
-                <div className={' text-2xl cursor-pointer font-bold hover:text-orange-500'} onClick={() => router.push(`/user/${user?.firebaseUuid}`)}  > {user?.name ? user.name : 'No name yet!'} </div>
+                <div
+                    className={' text-2xl cursor-pointer font-bold hover:text-orange-500'}>
+                    {user?.name ? user.name : 'No name yet!'}
+                </div>
                 </Dropdown>
 
             )
