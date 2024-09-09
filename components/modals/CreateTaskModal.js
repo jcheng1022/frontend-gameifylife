@@ -29,42 +29,49 @@ const CreateTaskModal = ({ open, onCancel }) => {
     };
 
     const handleChange = (name) => (e) => {
-
-        const val = typeof e === 'object' ? e?.target?.value : e
+        const val = typeof e === 'object' ? e?.target?.value : e;
 
         setForm((prev) => {
-            return {
-                ...prev,
-                [name]: val
-            }
-        })
-    }
+            let formCopy = [...prev];
+            formCopy[0] = {
+                ...formCopy[0],
+                [name]: val,
+            };
+            return formCopy;  // Ensuring the object is returned on the same line
+        });
+    };
+
 
     const handleSubmit = async () => {
 
-        const body = {...form}
-        const isToday = body?.isToday
+        const body = [...form]
 
-        if (isToday) {
-            delete body.date
-        }
-        delete body.isToday
+
+        body.forEach((item) => {
+            const isToday = item?.isToday
+
+            if (isToday) {
+                delete item.date
+            }
+            delete item.isToday
+        })
 
         await APIClient.api.post('/task', body).then(() => {
             client.refetchQueries({
                 queryKey: [user?.id, 'tasks', {}]
             })
-            if (isToday) {
+
                 client.refetchQueries({
                     queryKey: [user?.id, 'tasks', 'today', {}]
                 })
-            }
-            setForm(initForm)
+
+            setForm([initForm])
             onCancel()
         }).catch((error) => {
             openNotificationWithIcon(error)
         })
     }
+    const taskItem = form[0]
     return (
         <Modal width={'100%'} footer={[
             <Button key={'cancel-create-task-btn'}  className={'h-12 text-xl font-semibold'} onClick={onCancel}> Cancel </Button>,
@@ -82,14 +89,14 @@ const CreateTaskModal = ({ open, onCancel }) => {
 
                     <span>
                     <Switch
-                        checked={form?.isToday}
+                        checked={taskItem?.isToday}
                         onChange={handleChange('isToday')}
                     />
                         {/*<span> {!!form?.isToday ? 'Yes' : 'No'}</span>*/}
                 </span>
                 </div>
 
-                {!form?.isToday && (
+                {!taskItem?.isToday && (
                     <div className={'flex gap-4 py-2'}>
                         <span> Date</span>
                         <DatePicker onChange={(date, dateString) =>
@@ -118,7 +125,7 @@ const CreateTaskModal = ({ open, onCancel }) => {
                 <div>
                     <span className={' font-semibold'}> Task Type</span>
                     <div className={'text-sm text-slate-400'}> Identify this task as  static (instant completion) or progression (completed over time)  </div>
-                    <Radio.Group className={'my-2'} onChange={handleChange('type')} defaultValue={'STATIC'} value={form?.type}>
+                    <Radio.Group className={'my-2'} onChange={handleChange('type')} defaultValue={'STATIC'} value={taskItem?.type}>
                         <Radio value={'STATIC'}>Static</Radio>
                         <Radio value={'PROGRESS'}>Progression</Radio>
 
@@ -144,7 +151,7 @@ const CreateTaskModal = ({ open, onCancel }) => {
                 <div className={' py-2'}>
                     <span className={' font-semibold'}> Priority</span>
                     <div className={'text-sm text-slate-400'}> The priority of the task will help determine the points awarded upon completion </div>
-                    <Radio.Group className={'my-2'} onChange={handleChange('priority')} defaultValue={3} value={form?.priority}>
+                    <Radio.Group className={'my-2'} onChange={handleChange('priority')} defaultValue={3} value={taskItem?.priority}>
                         <Radio value={'EXTREMELY_LOW'}>Extremely Low</Radio>
                         <Radio value={'LOW'}>Low</Radio>
                         <Radio value={'MEDIUM'}>Medium</Radio>

@@ -50,6 +50,8 @@ const TaskPlanner = ({selected, setSelected, form, handleChange}) => {
         <div className={'min-w-full'}>
             {form?.map((task, index) => {
                 const taskId = generateTaskId(index)
+
+                const isSelected = taskId === selected
                 return (
 
                     <Collapse
@@ -58,12 +60,13 @@ const TaskPlanner = ({selected, setSelected, form, handleChange}) => {
                         activeKey={selected}
                         collapsible="header"
                         ghost
-                        expandIconPosition={'end'}
-                        className={'min-w-full w-full  border text-sm rounded-2xl p-8 my-2'}                        defaultActiveKey={['1']}
+                        expandIcon={null}
+                        // expandIconPosition={'start'}
+                        className={'min-w-full w-full  border text-sm rounded-2xl my-2'}                        defaultActiveKey={['1']}
                         items={[
                             {
                                 key: taskId,
-                                label: <div className={'w-full min-w-full'} onClick={() => {
+                                label: <div className={`px-4 rounded-2xl py-4 ${isSelected ? 'bg-sky-200 font-bold' : 'bg-slate-100'}  `} onClick={() => {
                                     taskId === selected ? setSelected(null) : !!selected ? setSelected(taskId) : setSelected(taskId)}
                                 }> {task.name ? task.name : 'Untitled'} </div>,
                                 // onClick: () => !!selected ? setSelected(null) : setSelected(taskId),
