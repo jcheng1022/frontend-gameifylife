@@ -21,18 +21,31 @@ const Hero = () => {
         }
     }
     return (
-        <div className={' p-4 flex items-center justify-around'}>
-            <div className={'py-24'}>
-<div className={'text-5xl font-bold text-slate-900'}>Turn your day into a game</div>
-                <p className={'text-lg text-blue-700'}>Manage your tasks and earn rewards</p>
-                <div
-                    onClick={handleUserCta}
-                    className={'bg-gradient-to-bl border-4 mt-8 from-sky-200 to-sky-300 hover:bg-gradient-to-tr border-2 cursor-pointer mt-8 from-sky-200 to-sky-300 w-64 rounded-2xl font-bold  h-16 flex items-center justify-center'}> Start Game</div>
-            </div>
-            <div className={'bg-gradient-to-r from-cyan-200 to-blue-600 p-4 rounded-2xl'} style={{width:200, height:200}}>
-                <Image src={MasterLogo} alt={'Ranking Icon'} width={200} height={200} />
+        <div className={' bg-purple-400 p-8 md:p-24 mb-24 md:mb-4 flex flex-col lg:flex-row items-center justify-around'}>
+            <div className={'flex-col items-center lg:text-left py-2 lg:py-24'}>
+                {/*<Image src={MasterLogo} alt={'Ranking Icon'} className={'lg:block w-40 h-40'}/>*/}
+
+                <div className={'text-3xl sm:text-5xl mb-8 lg:mb-12 font-bold text-slate-700 '}>Turn your day into a game</div>
+                <p className={'w-full lg:w-3/4 text-lg font-semibold text-slate-100'}> {`It's easier to get things done when you reward yourself after completing it! Hop into the game that is your life, and you're in control.`}</p>
 
             </div>
+            <div className={'hidden lg:block w-96 h-50 bg-gradient-to-r from-purple-300 to-purple-400 p-4 rounded-2xl'} >
+                <Image src={MasterLogo} alt={'Ranking Icon'} className={'w-96 h-50'}/>
+                <div
+                    onClick={handleUserCta}
+
+                    className={'w-full bg-gradient-to-br border-2 mt-8 from-purple-300 to-purple-400 hover:bg-gradient-to-tr border-2 cursor-pointer mt-8 rounded-2xl font-bold  h-16 flex items-center justify-center'}>
+                    Start Game
+                </div>
+
+            </div>
+            <div
+                onClick={handleUserCta}
+
+                className={'lg:hidden w-full bg-gradient-to-br border-2 from-purple-300 to-purple-400 hover:bg-gradient-to-tr border-2 cursor-pointer mt-8 w-64 rounded-2xl font-bold  h-16 flex items-center justify-center'}>
+                Start Game
+            </div>
+
 
 
         </div>

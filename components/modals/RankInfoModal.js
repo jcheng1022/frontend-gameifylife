@@ -10,7 +10,7 @@ import DiamondLogo from '../../public/diamond.svg'
 import MasterLogo from '../../public/master.svg'
 import {RANK_DETAILS} from "@/constants";
 
-const rankLogos = {
+export const rankLogos = {
     BRONZE: BronzeLogo,
     SILVER: SilverLogo,
     GOLD: GoldLogo,

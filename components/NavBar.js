@@ -14,9 +14,16 @@ const NavBar = () => {
 
     const userUid = useUserIsLoggedIn()
 
+    // const dropdownMenuClassName = "bg-purple-500 text-white font-bold"
     const items = [
         {
             key: '1',
+            // className:dropdownMenuClassName,
+            // style: {
+            //     color: "bg-red-200",
+            //     margin: 0,
+            //     backgroundColor: "red"
+            // },
             label: (
                <div onClick={() => router.push(`/user/${user?.firebaseUuid}`)}>
                    My Profile
@@ -26,6 +33,7 @@ const NavBar = () => {
 
         {
             key: '4',
+
             danger: true,
             label: 'Log Out',
             onClick: () => logOut()
@@ -54,10 +62,13 @@ const NavBar = () => {
                     menu={{
                         items,
                     }}
+
+
+
                     trigger={["click"]}
                 >
                 <div
-                    className={' text-2xl cursor-pointer font-bold hover:text-orange-500'}>
+                    className={' text-2xl cursor-pointer font-bold hover:text-purple-500'}>
                     {user?.name ? user.name : 'No name yet!'}
                 </div>
                 </Dropdown>
@@ -69,9 +80,9 @@ const NavBar = () => {
 
 
     return (
-        <div className={'px-8 h-24 py-4 flex  items-center justify-between bg-slate-400 text-white'}>
-            <div className={'font-bold text-3xl cursor-pointer hover:text-orange-500'}>
-                GameifyLife
+        <div className={'px-8 h-24 py-4 flex  items-center justify-between bg-purple-300 text-white'}>
+            <div className={'font-bold text-3xl cursor-pointer hover:text-purple-500'}>
+                Gameify Life
             </div>
             <div>
                 {endSection()}
