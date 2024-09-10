@@ -38,7 +38,10 @@ const TaskHistoryTable = ({data, isLoading = false}) => {
     ]
 
     return (
-        <Table dataSource={data} columns={columns}/>
+        <>
+            {data?.length === 0 && <div className={'text-center text-slate-400 py-12 mb-4 bg-slate-100'}>{`There's no task history yet! Once you start or complete tasks, they'll be updated here!`}</div>}
+            <Table dataSource={data} columns={columns}/>
+        </>
     );
 };
 

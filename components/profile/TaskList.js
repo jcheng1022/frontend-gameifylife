@@ -24,11 +24,11 @@ const TaskList = () => {
                </div>
            </div>
            <div className={'flex flex-wrap gap-2'}>
-               {tasks?.map((task, index) => {
+               {tasks?.length > 0 ? tasks?.map((task, index) => {
                    return (
                        <TaskItem key={`task-item-${index}`} task={task}/>
                    )
-               })}
+               }): <div className={'text-slate-400'}> No tasks for today yet! Create a new task to get started </div>}
 
            </div>
 
