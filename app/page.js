@@ -5,7 +5,7 @@ import FooterCta from "@/components/landing/FooterCta";
 
 export default function Home() {
   return (
-      <div className={'bg-purple-300 text-black'}>
+      <div className={'bg-purple-100 text-black font-mono'}>
           <Hero/>
 
           <div className={'h-4 sm:h-24'}/>

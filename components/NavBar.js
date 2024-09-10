@@ -50,9 +50,9 @@ const NavBar = () => {
         }
         if (!userUid && !user) {
             return (
-                <Button className={'bg-sky-300 text-white font-bold h-10 px-4'} onClick={() => handleSignIn()}>
+                <button className={'text-white hover:text-purple-400 font-bold h-10 px-4'} onClick={() => handleSignIn()}>
                     Get Started
-                </Button>
+                </button>
             )
         }
         if (userUid && user && !fetchingUser) {

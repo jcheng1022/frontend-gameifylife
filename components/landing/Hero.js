@@ -21,12 +21,12 @@ const Hero = () => {
         }
     }
     return (
-        <div className={' bg-purple-400 p-8 md:p-24 mb-24 md:mb-4 flex flex-col lg:flex-row items-center justify-around'}>
+        <div className={' bg-purple-100 p-8 md:p-24 mb-24 md:mb-4 flex flex-col lg:flex-row items-center justify-around'}>
             <div className={'flex-col items-center lg:text-left py-2 lg:py-24'}>
                 {/*<Image src={MasterLogo} alt={'Ranking Icon'} className={'lg:block w-40 h-40'}/>*/}
 
-                <div className={'text-3xl sm:text-5xl mb-8 lg:mb-12 font-bold text-slate-700 '}>Turn your day into a game</div>
-                <p className={'w-full lg:w-3/4 text-lg font-semibold text-slate-100'}> {`It's easier to get things done when you reward yourself after completing it! Hop into the game that is your life, and you're in control.`}</p>
+                <div className={'text-3xl sm:text-5xl mb-2 lg:mb-6 font-bold text-black '}>Turn your day into a game</div>
+                <p className={'w-full lg:w-3/4 text-lg font-semibold text-slate-400'}> {`It's easier to get things done when you reward yourself after completing it! Hop into the game that is your life, and you're in control.`}</p>
 
             </div>
             <div className={'hidden lg:block w-96 h-50 bg-gradient-to-r from-purple-300 to-purple-400 p-4 rounded-2xl'} >

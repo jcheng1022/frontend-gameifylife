@@ -21,7 +21,7 @@ const RankingSystem = () => {
                 ))}
             </div>
 
-            <div className={' mx-4 lg:mx-12 max-w-full text-white text-lg text-center '}> Everybody starts at bronze rank and players rank up by completing tasks. The more active you are, the more points or XP you gain towards ranking up! </div>
+            <div className={' w-full md:w-80 mx-4 mt-4 lg:mx-12 max-w-full text-black text-center '}> Everybody starts at bronze rank and players rank up by completing tasks. The more active you are, the more points or XP you gain towards ranking up! </div>
 
 
         </div>
