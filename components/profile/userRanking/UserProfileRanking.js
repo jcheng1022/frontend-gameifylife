@@ -1,25 +1,25 @@
-'use client';
-
 import React, {useState} from 'react';
-import {useCurrentUserData} from "@/hooks/user.hooks";
 import RankingLogo from "@/components/RankingLogo";
 import XPBar from "@/components/profile/XPBar";
 import RankInfoModal from "@/components/modals/RankInfoModal";
 
-const UserRanking = () => {
+const UserProfileRanking = ({isLoading, userData}) => {
 
-    // const {data: user} = useCurrentUser()
-    const {data: userData, isFetching, isLoading, isRefetching} = useCurrentUserData()
     const [openInfo, setOpenInfo] = useState(false)
-
-    if (!isRefetching && (isFetching || isLoading)) {
-        return <div> ...Loading</div>
-    }
 
     const closeModal = () => {
         setOpenInfo(false)
     }
 
+    if (isLoading) {
+        return (
+            <div className={'border rounded-2xl w-96 max-h-96 flex flex-col items-center justify-center p-12'}>
+
+                <RankingLogo isLoading={true} />
+                <div className={'font-extrabold text-4xl py-4 bg-slate-200 h-12  '}>  </div>
+            </div>
+            )
+    }
     return (
         <div className={'border rounded-2xl w-96 max-h-96 flex flex-col items-center justify-center p-12'}>
 
@@ -35,4 +35,4 @@ const UserRanking = () => {
     );
 };
 
-export default UserRanking;
+export default UserProfileRanking;

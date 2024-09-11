@@ -1,5 +1,5 @@
 import React from 'react';
-import UserRanking from "@/components/profile/UserRanking";
+import UserRanking from "@/components/profile/userRanking/UserRanking";
 import CreateTaskModal from "@/components/modals/CreateTaskModal";
 import Achievements from "@/components/profile/Achievements";
 import {ProfileContextProvider} from "@/context/ProfileContext";

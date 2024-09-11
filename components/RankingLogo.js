@@ -10,7 +10,7 @@ import {RANKING} from "@/constants";
 import styles from './RankingLogo.module.css'; // Import the CSS module
 
 
-const RankingLogo = ({level}) => {
+const RankingLogo = ({level = RANKING.MASTER, isLoading = false}) => {
 
 
     let svgPath;
@@ -39,7 +39,12 @@ const RankingLogo = ({level}) => {
 
     return (
         <div className={styles.imageContainer}>
-            <Image src={svgPath} alt={'Ranking Icon'} width={200} height={200} />
+            {isLoading ? <div style={{
+                width: 200,
+                height:200,
+                backgroundColor: "lightgray",
+                borderRadius: "50%"
+            }}/> : <Image src={svgPath} alt="Ranking Logo" />}
             <div className={styles.hexagonContainer}>
                 <div className={styles.hexagon}>
                     {level}
