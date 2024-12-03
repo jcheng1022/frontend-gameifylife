@@ -81,7 +81,7 @@ const NavBar = () => {
 
     return (
         <div className={'px-8 h-24 py-4 flex  items-center justify-between bg-purple-300 text-white'}>
-            <div className={'font-bold text-3xl cursor-pointer hover:text-purple-500'}>
+            <div className={'font-bold text-3xl cursor-pointer hover:text-purple-500'} onClick={() => router.push('/')}>
                 Gameify Life
             </div>
             <div>
